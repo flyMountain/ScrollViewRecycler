@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool = "http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<com.circlrnum.flymountain.customrecycle.CustomRecycleView
+    android:id="@+id/recycleView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tool:isGird="true"
+    tool:divideHeigth="1dp"
+    tool:divideColor="@color/colorAccent"
+    tool:spanCount="3"
+    ></com.circlrnum.flymountain.customrecycle.CustomRecycleView>
+</LinearLayout>

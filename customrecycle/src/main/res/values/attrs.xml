@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="divideHeigth" format="dimension"></attr>
+    <attr name="divideColor" format="color"></attr>
+    <attr name="isGird" format="boolean"></attr>
+    <attr name="spanCount" format="integer"></attr>
+<declare-styleable name="CustomRecycleView">
+    <attr name="divideHeigth"/>
+    <attr name="divideColor"/>
+    <attr name="isGird"/>
+    <attr name="spanCount"/>
+</declare-styleable>
+</resources>
