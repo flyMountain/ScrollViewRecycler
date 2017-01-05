@@ -42,6 +42,8 @@ public class CustomRecycleView extends SwipeRefreshLayout implements SwipeRefres
 
     private int spanCount;//Gird
 
+    private boolean isFoot;
+
 
     public CustomRecycleView(Context context) {
         this(context,null);
@@ -60,7 +62,7 @@ public class CustomRecycleView extends SwipeRefreshLayout implements SwipeRefres
             }  else if (attr == R.styleable.CustomRecycleView_isGird) {
                 isGird = a.getBoolean(attr, false);
             }else if (attr == R.styleable.CustomRecycleView_spanCount) {
-                spanCount = a.getIndex(attr);
+                spanCount = a.getInt(attr,1);
             }
         }
         a.recycle();
@@ -133,7 +135,9 @@ public class CustomRecycleView extends SwipeRefreshLayout implements SwipeRefres
 
     @Override
     public void onRefresh() {
-        setLoadMoreable(true);
+        if (!isFoot) {
+            setLoadMoreable(true);
+        }
         Log.e("onRefresh","onRefresh");
         if (mState == LoadingFooter.State.Loading) {
             //正在执行刷新或者加载更多
@@ -170,6 +174,7 @@ public class CustomRecycleView extends SwipeRefreshLayout implements SwipeRefres
     }
     //添加底部
     public void addFootView(View view){
+        isFoot = true;
         if (view!=null&&mHeaderAndFooterRecyclerViewAdapter!=null) {
             mHeaderAndFooterRecyclerViewAdapter.addFooterView(view);
         }
@@ -213,6 +218,7 @@ public class CustomRecycleView extends SwipeRefreshLayout implements SwipeRefres
             if (mState == LoadingFooter.State.Loading || mState == LoadingFooter.State.LoadingMore) {
                 return;
             }
+            Log.e("loadMoreable",loadMoreable+"");
             if (!loadMoreable) {
                 return;
             }

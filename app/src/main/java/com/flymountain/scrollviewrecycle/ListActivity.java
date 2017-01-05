@@ -49,13 +49,13 @@ public class ListActivity extends AppCompatActivity implements CustomRecycleView
     }
 
     public void setRecycle() {
-//        head =getLayoutInflater().inflate(R.layout.head_item, null);
-//        foot = getLayoutInflater().inflate(R.layout.foot_item,null);
         head = LayoutInflater.from(this).inflate(R.layout.head_item, recycleView, false);
+//        foot = LayoutInflater.from(this).inflate(R.layout.foot_item, recycleView, false);
         adapter = new RecyclerAdapter(this);
         recycleView.setAdapter(adapter);
         //必须在setAdapter之后
         recycleView.addHeadView(head);
+//        recycleView.addFootView(foot);
 //        recycleView.addFootView(foot);
         setDate(0);
     }

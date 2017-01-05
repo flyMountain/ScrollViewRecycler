@@ -224,9 +224,8 @@ public class HeaderAndFooterRecyclerViewAdapter extends RecyclerView.Adapter<Rec
                 @Override
                 public int getSpanSize(int position) {
                     Log.e("getSpanSize",TYPE_HEADER_VIEW+"     "+getItemViewType(position)+"      "+gridManager.getSpanCount());
-                    int index = getItemViewType(position) == TYPE_HEADER_VIEW
+                    int index = getItemViewType(position) == TYPE_HEADER_VIEW||getItemViewType(position) == TYPE_FOOTER_VIEW
                             ? gridManager.getSpanCount() : 1;
-//                    index =
                     return index;
                 }
             });

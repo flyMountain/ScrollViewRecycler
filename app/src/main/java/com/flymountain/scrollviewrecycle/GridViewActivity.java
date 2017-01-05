@@ -23,7 +23,7 @@ public class GridViewActivity extends Activity implements CustomRecycleView.OnMu
     GridRecycleAdapter adapter;
     ArrayList<String> list = new ArrayList<>();
     private int flag;
-    private View head;
+    private View head,foot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +47,11 @@ public class GridViewActivity extends Activity implements CustomRecycleView.OnMu
     }
     public void setRecycle() {
         head = LayoutInflater.from(this).inflate(R.layout.head_item, recycleView, false);
+//        foot = LayoutInflater.from(this).inflate(R.layout.foot_item, recycleView, false);
         adapter = new GridRecycleAdapter(this);
         recycleView.setAdapter(adapter);
         recycleView.addHeadView(head);
+//        recycleView.addHeadView(foot);
         setDate(0);
     }
 

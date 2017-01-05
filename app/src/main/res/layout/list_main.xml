@@ -10,5 +10,5 @@
         tools:isGird="false"
         tools:divideColor="@color/colorAccent"
         tools:divideHeigth="1dp"
-        ></com.circlrnum.flymountain.customrecycle.CustomRecycleView>
+        />
 </LinearLayout>
